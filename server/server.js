@@ -14,7 +14,7 @@ app.use(express.json({ limit: '50mb' })); // Increase limit for base64 images
 
 // MongoDB Connection
 // User provided Atlas Cluster
-const mongoURI = 'mongodb+srv://MemoryWall:MemoryWell@cluster0.7dbf95l.mongodb.net/memories_wall?retryWrites=true&w=majority&appName=Cluster0';
+const mongoURI = 'mongodb+srv://MemoryWall:MemoryWall@cluster0.ajxuxay.mongodb.net/memories_wall?retryWrites=true&w=majority&appName=Cluster0';
 
 mongoose.connect(mongoURI)
     .then(() => console.log('MongoDB Connected to Atlas'))
@@ -71,3 +71,4 @@ app.delete('/memories/:id', async (req, res) => {
 app.listen(PORT, () => {
     console.log(`Server running on http://localhost:${PORT}`);
 });
+
