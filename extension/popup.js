@@ -21,7 +21,7 @@ document.getElementById('uploadBtn').addEventListener('click', async () => {
             return;
         }
 
-        const response = await fetch('http://127.0.0.1:3000/upload', {
+        const response = await fetch('https://memory-wall-extention-1.onrender.com/upload', {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json'

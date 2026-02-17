@@ -41,7 +41,7 @@ btnConfirm.addEventListener('click', async () => {
             base64 = await toBase64(file);
         }
 
-        const response = await fetch('http://127.0.0.1:3000/upload', {
+        const response = await fetch('https://memory-wall-extention-1.onrender.com/upload', {
             method: 'POST',
             headers: { 'Content-Type': 'application/json' },
             body: JSON.stringify({ imageUrl: base64, description })
@@ -69,7 +69,7 @@ const toBase64 = file => new Promise((resolve, reject) => {
 
 async function loadMemories() {
     try {
-        const response = await fetch('http://127.0.0.1:3000/memories');
+        const response = await fetch('https://memory-wall-extention-1.onrender.com/memories');
         if (!response.ok) throw new Error('Failed to load memories');
 
         const memories = await response.json();
@@ -103,7 +103,7 @@ async function loadMemories() {
 async function deleteMemory(id) {
     if (!confirm('Delete this memory?')) return;
     try {
-        await fetch(`http://127.0.0.1:3000/memories/${id}`, { method: 'DELETE' });
+        await fetch(`https://memory-wall-extention-1.onrender.com/memories/${id}`, { method: 'DELETE' });
         loadMemories();
     } catch (err) {
         console.error(err);
